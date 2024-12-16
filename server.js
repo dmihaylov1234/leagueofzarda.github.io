@@ -18,9 +18,15 @@ app.get('/', (req, res) => {
 
 app.get('/api/fantasy', async (req, res) => {
   try {
-    const response = await fetch('https://fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/1234567', {
+    const apiUrl = 'https://fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/1234567';
+    const cookies = `espn_s2=${process.env.ESPN_S2}; swid=${process.env.SWID}`;
+
+    console.log('API URL:', apiUrl);
+    console.log('Cookies:', cookies);
+
+    const response = await fetch(apiUrl, {
       headers: {
-        'Cookie': `espn_s2=${process.env.ESPN_S2}; swid=${process.env.SWID}`,
+        'Cookie': cookies,
       },
     });
 
