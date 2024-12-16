@@ -5,6 +5,12 @@ import 'dotenv/config';
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.get('/api/fantasy', async (req, res) => {
   try {
     const response = await fetch('https://fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/1234567', {
