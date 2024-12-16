@@ -1,0 +1,11 @@
+{
+  "name": "fantasy-football-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "espn-fantasy-football-api": "^2.0.0",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  }
+}
