@@ -7,3 +7,6 @@ myClient.setCookies({
     espnS2: process.env.ESPN_S2, 
     SWID: process.env.SWID 
 });
+
+//print out the league id to the page
+console.log(myClient.getLeagueId());
